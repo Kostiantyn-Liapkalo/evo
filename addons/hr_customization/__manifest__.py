@@ -1,26 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "/tmp/hr_customization",
-
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
-
+    'name': "HR Customization",
+    'summary': "Customizations for HR management including positions and organization charts.",
     'description': """
-Long description of module's purpose
+This module provides various customizations for HR management in Odoo. 
+It includes features such as managing employee positions, custom fields in the employee form, 
+and enhancements to the organization chart.
     """,
-
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '1.9',
-
-    # any module necessary for this one to work correctly
+    'author': "Kostiantyn Liapkalo",
+    'category': 'Human Resources',
+    'version': '17.0.0.1.9',
     'depends': ['base', 'hr', 'hr_recruitment', 'hr_skills', 'hr_contract'],
-
-    # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/hr_employee_views.xml',
@@ -32,11 +22,6 @@ Long description of module's purpose
             'employee_position/static/src/js/organization_chart.js',
         ],
     },
-    # only loaded in demonstration mode
-    'demo': [
-        # 'demo/demo.xml',
-    ],
     'application': True,
- 	'installable': True,
+    'installable': True,
 }
-
