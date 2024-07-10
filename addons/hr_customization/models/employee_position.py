@@ -21,9 +21,9 @@ class EmployeePosition(models.Model):
     @api.depends('job_id')
     def _compute_working_hours(self):
         for record in self:
-            record.working_hours = record.job_id.working_hours_per_week
+            record.working_hours = record.job_id.working_hours_per_week if record.job_id else 0
 
-  
-    vacation_supervisor_id = fields.Many2one('res.users', string='Vacation (Direct Supervisor)', domain="[('time_off_manager', '=', 'Administrator')]")
-    vacation_hr_manager_id = fields.Many2one('res.users', string='Vacation (HR manager)', domain="[('time_off_manager', '=', 'Administrator')]")
+
+    vacation_supervisor_id = fields.Many2one('res.users', string='Vacation (Direct Supervisor)')
+    vacation_hr_manager_id = fields.Many2one('res.users', string='Vacation (HR manager)')
     expenses_manager_id = fields.Many2one('res.users', string='Expenses')

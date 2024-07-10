@@ -16,6 +16,7 @@ and enhancements to the organization chart.
         'views/hr_employee_views.xml',
         'views/employee_position_views.xml',
         'views/organization_chart_template.xml',
+        'views/hr_job_views.xml',
     ],
     'assets': {
         'web.assets_backend': [
